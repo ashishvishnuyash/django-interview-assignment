@@ -64,7 +64,7 @@ class Memberlist(APIView):
             serializerr.save()
             return Response({
                 "status":200,
-                "massage":"Book Added"
+                "massage":"Member Created"
             })
         else:
             return Response({"status":"error"})
@@ -72,7 +72,7 @@ class Memberlist(APIView):
         data = request.data
         node = User.objects.get(username=data["username"])
         node.delete()
-        return Response({"massage":"Book deleted"})
+        return Response({"massage":"Member Deleted"})
     
     def patch(self,request):
         data = request.data
@@ -82,7 +82,7 @@ class Memberlist(APIView):
             serializerr.save()
             return Response({
                 "status":200,
-                "massage":"Book Update"
+                "massage":"Member Update"
             })
         else:
             return Response({"massage":"error"})
